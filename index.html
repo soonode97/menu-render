@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="menurender" content="width=device-width, initial-scale=1.0">
+    <title>메뉴렌더링</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+    * {
+        font-family: "Gowun Dodum", sans-serif;
+    }
+
+    .my_header {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        font-size: 24px;
+    }
+
+    .my_background {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my_menu_background {
+        display: flex;
+        align-items: center;
+        /* 세로 중앙 정렬 */
+        justify-content: space-between;
+        /* 요소들 사이의 공간 분배 */
+        padding: 10px;
+    }
+
+    .my_menu_background>div {
+        display: flex;
+        align-items: center;
+        /* 세로 중앙 정렬 */
+    }
+
+    .my_menu_background .btn {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        /* 세로 중앙 정렬 */
+    }
+</style>
+
+<body>
+    <header>
+        <div class="my_header">
+            <p>메뉴</p>
+        </div>
+    </header>
+    <div class="my_background">
+        <div class="my_menu_background">
+            <div>
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+                    onclick="displayMenu('Korean')">
+                    한식
+                </button>
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+                    onclick="displayMenu('Chinese')">
+                    중식
+                </button>
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+                    onclick="displayMenu('Italic')">
+                    양식
+                </button>
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+                    onclick="displayMenu('Japanese')">
+                    일식
+                </button>
+                <button class="btn btn-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample"
+                    onclick="displayMenu()">
+                    모두
+                </button>
+                <div class="input-group" style="margin-left:30px">
+                    <input style="width:300px" type="text" class="form-control" placeholder="찾고 싶은 음식을 검색해보세요."
+                        aria-label="search_food" aria-describedby="button-addon2" id="search_input_data">
+                    <button class="btn btn-outline-secondary" type="button" id="search_food"
+                        onclick="filter_food_desc()">검색</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card mb-3" style="max-width: 540px;" id="my_cards">
+                <!-- 카드 내용 -->
+            </div>
+        </div>
+    </div>
+    <script src="menu.js"></script>
+</body>
+
+</html>
